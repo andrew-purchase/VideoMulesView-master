@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class PlayerStageController {
+    String type;
     @FXML Pane MainPane;
     @FXML Button btnHitter;
     @FXML Button btnPitcher;
@@ -26,6 +27,7 @@ public class PlayerStageController {
     }
 
     public void hittertype(){
+        type="Offensive";
         PlayerView.getItems().add("Hitter"); // this is testing to see button working.
     }
 
