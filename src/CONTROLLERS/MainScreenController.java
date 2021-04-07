@@ -72,4 +72,8 @@ public class MainScreenController {
         MainPane.getChildren().add(PaneNewOppo);
     }
 
+    public void openVideoStage() throws IOException{
+
+    }
+
 }
