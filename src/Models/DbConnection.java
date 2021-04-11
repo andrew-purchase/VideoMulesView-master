@@ -3,18 +3,14 @@ package Models;
 import Queries.PlayerQueries;
 import javafx.scene.control.ListView;
 
-import javax.sql.rowset.CachedRowSet;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Properties;
 
 
     public class DbConnection {
         public static Statement stmt;
         public static void InitializeDB() throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
-            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance(); //I had to change "fDriver" to "Driver" -Andrew
             System.out.println("Driver loaded");
             Connection myConn = DriverManager.getConnection
                     ("jdbc:mysql://BigOunce.duckdns.org:50931/UCM_Baseball_Video_Control?serverTimezone=UTC","madera" ,"java-project");
@@ -31,6 +27,19 @@ import java.util.Properties;
                 players_name.add(rs.getString("player_name"));
             }
             for (String p : players_name){
+                view.getItems().add(p);
+            }
+        }
+
+        //Andrew:
+        public static void FillTeamList (ListView<String> view) throws Exception {
+            ArrayList<String> team_name = new ArrayList<>();
+            String teamQuery = PlayerQueries.TeamList();
+            ResultSet rs = stmt.executeQuery(teamQuery);
+            while (rs.next()) {
+                team_name.add(rs.getString("team_name"));
+            }
+            for (String p : team_name){
                 view.getItems().add(p);
             }
         }

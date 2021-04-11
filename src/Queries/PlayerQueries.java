@@ -14,5 +14,9 @@ public class PlayerQueries {
         return "SELECT video_link FROM video WHERE video_name = " + "'" + videoName + "'";
     }
 
+    public static String TeamList(){
+        return "SELECT DISTINCT team_name FROM video";
+    }
+
 
 }
