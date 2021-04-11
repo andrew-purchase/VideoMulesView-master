@@ -11,13 +11,8 @@ public class OpponentScreenController {
         MainScreenController mainController = MainScreenController.getInstance();
         mainController.openFrontScreen();
     }
-    //works:
-//    public void findPlayer() throws Exception{
-//        oppoTeamView.getItems().clear();
-//        Models.DbConnection.FillList("Offensive",oppoTeamView);
-//    }
-public void findPlayer() throws Exception{
-    oppoTeamView.getItems().clear();
-    Models.DbConnection.FillTeamList(oppoTeamView);
-}
+    public void findPlayer() throws Exception{
+        oppoTeamView.getItems().clear();
+        Models.DbConnection.FillTeamList(oppoTeamView);
+    }
 }

@@ -31,7 +31,6 @@ import java.util.ArrayList;
             }
         }
 
-        //Andrew:
         public static void FillTeamList (ListView<String> view) throws Exception {
             ArrayList<String> team_name = new ArrayList<>();
             String teamQuery = PlayerQueries.TeamList();
