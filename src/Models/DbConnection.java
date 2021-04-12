@@ -1,6 +1,7 @@
 package Models;
 
 import Queries.PlayerQueries;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 
 import java.sql.*;
@@ -31,7 +32,19 @@ import java.util.ArrayList;
             }
         }
 
+        //need to make generic
         public static void FillTeamList (ListView<String> view) throws Exception {
+            ArrayList<String> team_name = new ArrayList<>();
+            String teamQuery = PlayerQueries.TeamList();
+            ResultSet rs = stmt.executeQuery(teamQuery);
+            while (rs.next()) {
+                team_name.add(rs.getString("team_name"));
+            }
+            for (String p : team_name){
+                view.getItems().add(p);
+            }
+        }
+        public static void FillTeamList2 (ChoiceBox<String> view) throws Exception {
             ArrayList<String> team_name = new ArrayList<>();
             String teamQuery = PlayerQueries.TeamList();
             ResultSet rs = stmt.executeQuery(teamQuery);

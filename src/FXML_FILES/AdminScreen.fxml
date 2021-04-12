@@ -17,17 +17,17 @@
          <children>
             <AnchorPane prefHeight="506.0" prefWidth="220.0">
                <children>
-                  <Button fx:id="btnHitter" layoutX="22.0" layoutY="68.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="177.0" text="Hitter">
+                  <Button fx:id="btnHitter" layoutX="22.0" layoutY="68.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="177.0" text="Hitter" onAction="#hittertype">
                      <font>
                         <Font size="34.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnPitcher" layoutX="22.0" layoutY="216.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="177.0" text="Pitcher">
+                  <Button fx:id="btnPitcher" layoutX="22.0" layoutY="216.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="177.0" text="Pitcher" onAction="#pitchertype">
                      <font>
                         <Font size="34.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnDefense" layoutX="22.0" layoutY="363.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="177.0" text="Defense">
+                  <Button fx:id="btnDefense" layoutX="22.0" layoutY="363.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="177.0" text="Defense" onAction="#defensetype">
                      <font>
                         <Font size="34.0" />
                      </font>

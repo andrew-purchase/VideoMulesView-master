@@ -11,9 +11,6 @@ public class OpponentScreenController {
 
     //script runs on startup; populates the Select Team List
     public void initialize() throws Exception {
-//        oppoTeamView.getItems().clear();
-        oppoPlayerView.getItems().clear();
-        videoView.getItems().clear();
         Models.DbConnection.FillTeamList(oppoTeamView);
     }
 
