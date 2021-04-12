@@ -15,7 +15,13 @@ public class PlayerQueries {
     }
 
     public static String TeamList(){
-        return "SELECT DISTINCT team_name FROM video";
+        return "SELECT DISTINCT team_name FROM video WHERE team_name != 'University of Central Mis'";
+    }
+
+    public static String PitcherList(String teamName){
+        return "SELECT DISTINCT player_name FROM video WHERE team_name = '" + teamName + "';";
+//        return "SELECT DISTINCT player_name FROM video where team_name = 'University of Central Mis'";
+//        return "SELECT DISTINCT player_name FROM video";
     }
 
 

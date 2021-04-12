@@ -43,6 +43,18 @@ import java.util.ArrayList;
             }
         }
 
+        public static void FillPitcherList (String teamName, ListView<String> view) throws Exception {
+            ArrayList<String> pitcher_name = new ArrayList<>();
+            String playerQuery = PlayerQueries.PitcherList(teamName);
+            ResultSet rs = stmt.executeQuery(playerQuery);
+            while (rs.next()) {
+                pitcher_name.add(rs.getString("player_name"));
+            }
+            for (String p : pitcher_name){
+                view.getItems().add(p);
+            }
+        }
+
         public static void FillVideoList (String name, ListView<String> video) throws Exception{
             ArrayList<String> video_name = new ArrayList<>();
             String videoQuery = PlayerQueries.VideosQuery(name);
