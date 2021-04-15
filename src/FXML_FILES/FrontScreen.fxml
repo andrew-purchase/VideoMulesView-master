@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="538.0" prefWidth="1243.0"  xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLERS.FrontScreenController">
+   <children>
+      <Pane layoutX="159.0" layoutY="104.0" prefHeight="200.0" prefWidth="200.0" styleClass="centerPane" />
+      <Button fx:id="btnMules" layoutX="68.0" layoutY="353.0" mnemonicParsing="false" onAction="#openMulesVideo" prefHeight="91.0" prefWidth="319.0" styleClass="loginButton" text="Mules Player Video">
+         <font>
+            <Font size="29.0" />
+         </font></Button>
+      <ImageView fitHeight="231.0" fitWidth="820.0" layoutX="227.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../IMAGES/title.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnSubmit" layoutX="462.0" layoutY="353.0" mnemonicParsing="false" onAction="#openSubmitVideo" prefHeight="91.0" prefWidth="319.0" styleClass="loginButton" text="Submit New Video">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnOpponent" layoutX="856.0" layoutY="353.0" mnemonicParsing="false" onAction="#openOpponentVideo" prefHeight="91.0" prefWidth="319.0" styleClass="loginButton" text="Opponents Video">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
