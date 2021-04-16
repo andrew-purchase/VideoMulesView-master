@@ -24,5 +24,15 @@ public class PlayerQueries {
 //        return "SELECT DISTINCT player_name FROM video";
     }
 
+    public static String InsertNewPlayer(String player_name, String video_name, String video_link, String type){
+        return "INSERT INTO `video` (`player_name`, `team_name`, `video_name`, `video_link`, `Year`, `video_type`) VALUES " +
+                "('" + player_name + "','University of Central Mis','" + video_name + "','" + video_link +"',NULL,'" +
+                type + "')";
+    }
+
+    public static String DeletePlayer (String video_link){
+        return "DELETE FROM `UCM_Baseball_Video_Control`.`video` WHERE (`video_link` = '" + video_link + "')";
+    }
+
 
 }

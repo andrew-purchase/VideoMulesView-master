@@ -1,20 +1,28 @@
 package CONTROLLERS;
 
+import Models.DbConnection;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class AdminStageController {
-    String query;
-    @FXML Button btnAddNewPlayer;
+    @FXML Button btnAddNewPlayer, btnAdd, btnDelete,btnAddNewOpponent;
     @FXML ListView<String> viewPlayer;
+    @FXML TextField txtVideoName, txtVideoLink;
+
+    String type;
+    String video_name;
+    String player_name;
+    String video_link;
     
     Parent root;
-    public Stage newPlayerStage = new Stage();
+    public static Stage newPlayerStage = new Stage();
 
     MainScreenController mainController= MainScreenController.getInstance();
 
@@ -22,20 +30,20 @@ public class AdminStageController {
     //script for hitter button; populate player list view with hitters
     public void hittertype() throws Exception{
         viewPlayer.getItems().clear();
-        query="Offensive";
-        Models.DbConnection.FillList(query, viewPlayer);
+       type="Offensive";
+        DbConnection.FillList(type, viewPlayer);
     }
 
     public void pitchertype() throws Exception{
         viewPlayer.getItems().clear();
-        query="Pitching";
-        Models.DbConnection.FillList(query, viewPlayer);
+        type="Pitching";
+        DbConnection.FillList(type, viewPlayer);
     }
 
     public void defensetype() throws Exception{
         viewPlayer.getItems().clear();
-        query="Defensive";
-        Models.DbConnection.FillList(query, viewPlayer);
+        type="Defensive";
+        Models.DbConnection.FillList(type, viewPlayer);
     }
 
     public void openNewPlayerStage() throws Exception{
@@ -46,6 +54,9 @@ public class AdminStageController {
         newPlayerStage.setTitle("ADD NEW PLAYER");
         newPlayerStage.setScene(scene);
         newPlayerStage.show();
+    }
+    public static void closeNewPlayerStage() throws Exception{
+        newPlayerStage.close();
     }
 
     public void openNewOpponentVideo() throws Exception{
@@ -60,6 +71,24 @@ public class AdminStageController {
 
     public void goBack() throws Exception {
         mainController.openFrontScreen();
+    }
+
+    public void insertNewPlayer() throws Exception {
+        player_name = viewPlayer.getSelectionModel().getSelectedItem();
+        video_name = txtVideoName.getText().trim().toString();
+        video_link= txtVideoLink.getText().trim().toString();
+        Models.DbConnection.addNewPlayer(player_name,video_name,video_link,type);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setHeaderText("a new video has been added to player " + player_name);
+        alert.showAndWait();
+    }
+
+    public void deletePlayer() throws Exception{
+        video_link = txtVideoLink.getText().trim().toString();
+        Models.DbConnection.DeletePlayer(video_link);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setHeaderText("the video with the name of " + video_name + " from Player " + player_name + " has been deleted");
+        alert.showAndWait();
     }
 
 

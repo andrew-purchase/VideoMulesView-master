@@ -98,6 +98,16 @@ import java.util.ArrayList;
             }
             return name;
         }
+        public static void addNewPlayer(String name, String vName, String vLink, String type) throws SQLException {
+            String newPlayerQuery=PlayerQueries.InsertNewPlayer(name, vName, vLink, type);
+            stmt.executeUpdate(newPlayerQuery);
+            System.out.println("UPDATE COMPLETED");
+        }
+        public static void DeletePlayer (String video_link) throws SQLException {
+            String deletePlayer = PlayerQueries.DeletePlayer(video_link);
+            stmt.executeUpdate(deletePlayer);
+            System.out.println("DELETE COMPLETED");
+        }
     public static void main(String[] args) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
         InitializeDB();
     }
