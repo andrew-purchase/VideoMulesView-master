@@ -30,6 +30,12 @@ public class PlayerQueries {
                 type + "')";
     }
 
+    public static String InsertNewOpponentVideo(String player_name, String player_link, String video_name, String player_type, String team_name){
+        return "INSERT INTO `video` (`player_name`, `team_name`, `video_name`, `video_link`, `video_type`) VALUES " +
+                "('" + player_name + "','" + team_name + "','" + video_name + "','" + player_link + "','" +
+                player_type + "')";
+    }
+
     public static String DeletePlayer (String video_link){
         return "DELETE FROM `UCM_Baseball_Video_Control`.`video` WHERE (`video_link` = '" + video_link + "')";
     }

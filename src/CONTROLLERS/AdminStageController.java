@@ -59,6 +59,10 @@ public class AdminStageController {
         newPlayerStage.close();
     }
 
+    public static void closeNewOpponentStage() throws Exception{
+        newPlayerStage.close();
+    }
+
     public void openNewOpponentVideo() throws Exception{
         root = FXMLLoader.load(getClass().getResource("/FXML_FILES/AddNewOpponent.fxml"));
         Scene scene=new Scene(root,620,500);

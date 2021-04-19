@@ -103,6 +103,11 @@ import java.util.ArrayList;
             stmt.executeUpdate(newPlayerQuery);
             System.out.println("UPDATE COMPLETED");
         }
+        public static void addNewOpponentVideo(String player_name, String player_link, String video_name, String player_type, String team_name) throws SQLException {
+            String newOpponentQuery=PlayerQueries.InsertNewOpponentVideo(player_name, player_link, video_name, player_type, team_name);
+            stmt.executeUpdate(newOpponentQuery);
+            System.out.println("UPDATE COMPLETED");
+        }
         public static void DeletePlayer (String video_link) throws SQLException {
             String deletePlayer = PlayerQueries.DeletePlayer(video_link);
             stmt.executeUpdate(deletePlayer);
