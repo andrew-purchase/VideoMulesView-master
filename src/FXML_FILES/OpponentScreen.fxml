@@ -10,7 +10,7 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="538.0" prefWidth="1243.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLERS.OpponentScreenController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="1474.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLERS.OpponentScreenController">
    <children>
       <Pane layoutX="242.0" layoutY="28.0" prefHeight="496.0" prefWidth="413.0">
          <children>
@@ -44,15 +44,15 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <AnchorPane layoutX="655.0" layoutY="28.0" prefHeight="426.0" prefWidth="555.0">
+      <AnchorPane layoutX="655.0" layoutY="28.0" prefHeight="519.0" prefWidth="800.0">
          <children>
-            <MediaView fx:id="mediaView" fitHeight="408.0" fitWidth="555.0" />
-            <Button fx:id="btnPause" layoutX="130.0" layoutY="354.0" mnemonicParsing="false" onAction="#pauseMedia" prefHeight="69.0" prefWidth="177.0" text="PAUSE">
+            <MediaView fx:id="mediaView" fitHeight="428.0" fitWidth="800.0" layoutX="6.0" />
+            <Button fx:id="btnPause" layoutX="246.0" layoutY="436.0" mnemonicParsing="false" onAction="#pauseMedia" prefHeight="69.0" prefWidth="177.0" text="PAUSE">
                <font>
                   <Font size="32.0" />
                </font>
             </Button>
-            <Button fx:id="btnReset" layoutX="360.0" layoutY="354.0" mnemonicParsing="false" onAction="#resetMedia" text="RESET">
+            <Button fx:id="btnReset" layoutX="426.0" layoutY="436.0" mnemonicParsing="false" onAction="#resetMedia" text="RESET">
                <font>
                   <Font size="32.0" />
                </font>

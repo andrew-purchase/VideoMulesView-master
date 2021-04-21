@@ -24,11 +24,12 @@ public class MainScreenController {
     }
     public void openMainScreen() throws IOException{
         root = FXMLLoader.load(getClass().getResource("/FXML_FILES/MainScreen.fxml"));
-        Scene scene=new Scene(root,1243,538);
+        Scene scene=new Scene(root,1474,548);
         scene.getStylesheets().add(getClass().getResource("/FXML_FILES/styles.css").toExternalForm());
 
         MainStage.setTitle("Video MULES View");
         MainStage.setScene(scene);
+        MainStage.setResizable(false);
         MainStage.show();
     }
 

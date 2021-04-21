@@ -20,8 +20,7 @@ public class LoginController {
     @FXML public Button buttonLogin;
 
     String username = "MulesBaseball";
-    String passw = "MulesControl2021";
-
+    String passw = "MulesBall2021";
     public void attemptLogin() throws Exception {
         if (textFieldUsername.getText().equals(username) && textFieldPassword.getText().equals(passw)){
             mainController.openFrontScreen();

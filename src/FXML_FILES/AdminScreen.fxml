@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="538.0" prefWidth="1243.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLERS.AdminStageController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="1474.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLERS.AdminStageController">
    <children>
       <VBox layoutX="14.0" layoutY="14.0" prefHeight="505.0" prefWidth="220.0">
          <children>
@@ -19,17 +19,17 @@
                <children>
                   <Button fx:id="btnHitter" layoutX="22.0" layoutY="68.0" mnemonicParsing="false" onAction="#hittertype" prefHeight="68.0" prefWidth="177.0" text="Hitter">
                      <font>
-                        <Font size="34.0" />
+                        <Font size="30.0" />
                      </font>
                   </Button>
                   <Button fx:id="btnPitcher" layoutX="22.0" layoutY="216.0" mnemonicParsing="false" onAction="#pitchertype" prefHeight="68.0" prefWidth="177.0" text="Pitcher">
                      <font>
-                        <Font size="34.0" />
+                        <Font size="30.0" />
                      </font>
                   </Button>
                   <Button fx:id="btnDefense" layoutX="22.0" layoutY="363.0" mnemonicParsing="false" onAction="#defensetype" prefHeight="68.0" prefWidth="177.0" text="Defense">
                      <font>
-                        <Font size="34.0" />
+                        <Font size="30.0" />
                      </font>
                   </Button>
                   <Button fx:id="btnBack" layoutX="-8.0" layoutY="480.0" mnemonicParsing="false" onAction="#goBack" text="Back">
@@ -45,7 +45,7 @@
          <children>
             <Label layoutX="14.0" layoutY="24.0" prefHeight="53.0" prefWidth="212.0" text="Select Player">
                <font>
-                  <Font size="36.0" />
+                  <Font size="23.0" />
                </font>
             </Label>
             <ListView fx:id="viewPlayer" layoutX="14.0" layoutY="77.0" prefHeight="267.0" prefWidth="177.0" />
@@ -57,48 +57,48 @@
          </children>
       </Pane>
       <Pane fx:id="enterLink">
-         <Label layoutX="504.0" layoutY="52.0" prefHeight="53.0" prefWidth="303.0" text="Enter video name">
+         <Label layoutX="582.0" layoutY="55.0" prefHeight="53.0" prefWidth="303.0" text="Enter video name">
             <font>
                <Font size="36.0" />
             </font>
          </Label>
-         <TextField fx:id="txtVideoName" layoutX="804.0" layoutY="51.0" prefHeight="56.0" prefWidth="360.0">
+         <TextField fx:id="txtVideoName" layoutX="882.0" layoutY="54.0" prefHeight="56.0" prefWidth="360.0">
             <font>
                <Font size="26.0" />
             </font>
          </TextField>
       </Pane>
-      <Button fx:id="btnAdd" onAction="#insertNewPlayer" layoutX="876.0" layoutY="202.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="177.0" text="ADD">
+      <Button fx:id="btnAdd" layoutX="977.0" layoutY="184.0" mnemonicParsing="false" onAction="#insertNewPlayer" prefHeight="68.0" prefWidth="177.0" text="ADD">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAddNewPlayer" layoutX="924.0" layoutY="348.0" mnemonicParsing="false" onAction="#openNewPlayerStage" prefHeight="74.0" prefWidth="283.0" text="Add new player">
          <font>
             <Font size="34.0" />
          </font>
       </Button>
-      <Button fx:id="btnAddNewPlayer" layoutX="896.0" layoutY="370.0" mnemonicParsing="false" onAction="#openNewPlayerStage" prefHeight="74.0" prefWidth="283.0" text="Add new player">
+      <Button fx:id="btnDelete" layoutX="1301.0" layoutY="469.0" mnemonicParsing="false" onAction="#deletePlayer" prefHeight="21.0" prefWidth="147.0" text="Delete">
          <font>
-            <Font size="34.0" />
+            <Font size="30.0" />
          </font>
       </Button>
-      <Button fx:id="btnDelete" onAction="#deletePlayer" layoutX="658.0" layoutY="450.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="177.0" text="Delete">
+      <Label layoutX="859.0" layoutY="274.0" opacity="0.18" prefHeight="74.0" prefWidth="413.0" text="ADMINISTRATION">
          <font>
-            <Font size="34.0" />
-         </font>
-      </Button>
-      <Label layoutX="800.0" layoutY="296.0" opacity="0.18" prefHeight="53.0" prefWidth="303.0" text="ADMINISTRATION">
-         <font>
-            <Font size="36.0" />
+            <Font size="49.0" />
          </font>
       </Label>
-      <Label layoutX="504.0" layoutY="131.0" prefHeight="53.0" prefWidth="289.0" text="Enter video link">
+      <Label layoutX="584.0" layoutY="131.0" prefHeight="53.0" prefWidth="289.0" text="Enter video link">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
-      <TextField fx:id="txtVideoLink" layoutX="746.0" layoutY="131.0" prefHeight="44.0" prefWidth="436.0">
+      <TextField fx:id="txtVideoLink" layoutX="848.0" layoutY="131.0" prefHeight="44.0" prefWidth="436.0">
          <font>
             <Font size="20.0" />
          </font>
       </TextField>
-      <Button fx:id="btnAddNewOpponent" layoutX="846.0" layoutY="450.0" mnemonicParsing="false" onAction="#openNewOpponentVideo" prefHeight="74.0" prefWidth="383.0" text="Add Opponent video">
+      <Button fx:id="btnAddNewOpponent" layoutX="875.0" layoutY="432.0" mnemonicParsing="false" onAction="#openNewOpponentVideo" prefHeight="74.0" prefWidth="383.0" text="Add Opponent video">
          <font>
             <Font size="34.0" />
          </font>
