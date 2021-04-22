@@ -48,9 +48,9 @@
 /*	-fx-text-fill: white;*/
 /*	-fx-font-family: "Arial Black", Gadget, sans-serif;*/
 /*}*/
-Pane {
-	/*-fx-background-color: #4a4a4a;*/
-}
+/*Pane {
+	-fx-background-color: #000000;
+}*/
 
 Button {
 	-fx-background-color: #cf202e;

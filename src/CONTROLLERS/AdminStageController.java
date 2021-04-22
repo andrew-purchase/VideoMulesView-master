@@ -88,8 +88,9 @@ public class AdminStageController {
     }
 
     public void deletePlayer() throws Exception{
-        video_link = txtVideoLink.getText().trim().toString();
-        Models.DbConnection.DeletePlayer(video_link);
+        player_name = viewPlayer.getSelectionModel().getSelectedItem();
+        video_name = txtVideoName.getText().trim().toString();
+        Models.DbConnection.DeletePlayer(player_name,video_name);
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setHeaderText("the video with the name of " + video_name + " from Player " + player_name + " has been deleted");
         alert.showAndWait();

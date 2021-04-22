@@ -108,8 +108,8 @@ import java.util.ArrayList;
             stmt.executeUpdate(newOpponentQuery);
             System.out.println("UPDATE COMPLETED");
         }
-        public static void DeletePlayer (String video_link) throws SQLException {
-            String deletePlayer = PlayerQueries.DeletePlayer(video_link);
+        public static void DeletePlayer (String player_name, String video_name) throws SQLException {
+            String deletePlayer = PlayerQueries.DeletePlayer(player_name, video_name);
             stmt.executeUpdate(deletePlayer);
             System.out.println("DELETE COMPLETED");
         }

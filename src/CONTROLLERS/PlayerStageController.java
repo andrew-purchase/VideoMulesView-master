@@ -3,11 +3,14 @@ package CONTROLLERS;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.io.File;
@@ -18,15 +21,10 @@ public class PlayerStageController {
     @FXML Button btnHitter;
     @FXML Button btnPitcher;
     @FXML Button btnDefense;
-    @FXML Button btnPause, btnReset;
     @FXML ListView<String> PlayerView;
     @FXML ListView<String> LinkView;
-    @FXML MediaView mediaView;
-    private Media media;
-    private MediaPlayer mediaPlayer;
     String video_name;
     String video_link;
-    boolean Playing = true;
     MainScreenController mainController= MainScreenController.getInstance();
 
     public void findVideo() throws Exception {
@@ -63,7 +61,7 @@ public class PlayerStageController {
         mainController.openFrontScreen();
     }
 
-    public void pauseMedia(){
+    /** public void pauseMedia(){
         if (Playing){
             mediaPlayer.pause();
             btnPause.setText("Play");
@@ -83,7 +81,7 @@ public class PlayerStageController {
     }
 
 
-    public void displayVideo() throws Exception{
+     public void displayVideo() throws Exception{
         video_name = LinkView.getSelectionModel().getSelectedItem();
         video_link=Models.DbConnection.ReturnVideoLink(video_name);
         String path = new File("C:\\Users\\Alex\\IdeaProjects\\UCMVideoProject\\src\\" + video_link).getAbsolutePath();
@@ -91,6 +89,25 @@ public class PlayerStageController {
         mediaPlayer = new MediaPlayer(media);
         mediaView.setMediaPlayer(mediaPlayer);
         mediaPlayer.setAutoPlay(true);
+    }**/
+
+    public void openVideo() throws Exception{
+        video_name = LinkView.getSelectionModel().getSelectedItem();
+        video_link=Models.DbConnection.ReturnVideoLink(video_name);
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("JavaFX WebView Example");
+        primaryStage.setResizable(false);
+
+        WebView webView = new WebView();
+
+        webView.getEngine().load(video_link);
+
+        VBox vBox = new VBox(webView);
+        Scene scene = new Scene(vBox, 960, 600);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
     }
 
 }

@@ -36,8 +36,10 @@ public class PlayerQueries {
                 player_type + "')";
     }
 
-    public static String DeletePlayer (String video_link){
-        return "DELETE FROM `UCM_Baseball_Video_Control`.`video` WHERE (`video_link` = '" + video_link + "')";
+    public static String DeletePlayer (String player_name, String video_name){
+        return "DELETE FROM `UCM_Baseball_Video_Control`.`video` WHERE (`video_name` = '" + video_name + "') AND (`player_name` = '"
+                + player_name + "')";
+        //return "DELETE FROM `UCM_Baseball_Video_Control`.`video` WHERE (`video_link` = '" + video_link + "')";
     }
 
 
