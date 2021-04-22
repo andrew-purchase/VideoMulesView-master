@@ -1,76 +1,53 @@
-/*.sidebar {*/
-/*	-fx-background-color: #171717;*/
-/*	-fx-spacing: 10px;*/
-/*	-fx-padding: 3px;*/
-/*}*/
-
-/*.sidebarBtn {*/
-/*	-fx-font-size:30px;*/
-/*	-fx-color:white;*/
-/*	-fx-font-family: "Arial Black", Gadget, sans-serif;*/
-/*	-fx-font-size: 18px;*/
-/*	-fx-text-alignment: RIGHT;*/
-/*	*/
-/*	*/
-/*	-fx-background-radius: 15px; // Gives btns rounded corners*/
-/*	-fx-background-color: gray;*/
-/*}*/
-
-/*.sidebarBtn .text {*/
-/*	-fx-fill: white;*/
-/*}*/
-
-/*.sidebarPane {*/
-/*	-fx-background-color: transparent;*/
-/*}*/
-
-/*.sidebarBtn:hover {*/
-/*	-fx-background-color: #202020;*/
-/*}*/
-
-/*.centerPane {*/
-/*	-fx-background-color: #232323;*/
-/*}*/
-
-/*.usernameField, .passwordField {*/
-/*	// Makes input fields rounded*/
-/*	-fx-moz-border-radius: 15px;*/
-/*	-fx-border-radius: 15px;*/
-/*    -fx-border:solid 1px black;*/
-/*    -fx-padding:5px;*/
-/*	-fx-font-family: "Arial Black", Gadget, sans-serif;*/
-/*	-fx-background-color: #7777;*/
-/*	-fx-text-fill: white;*/
-/*	-fx-prompt-text-fill: black;*/
-/*}*/
-
-/*.loginButton, .titlelbl {*/
-/*	-fx-text-fill: white;*/
-/*	-fx-font-family: "Arial Black", Gadget, sans-serif;*/
-/*}*/
-/*Pane {
-	-fx-background-color: #000000;
-}*/
-
 Button {
-	-fx-background-color: #cf202e;
+	-fx-background-color:
+		linear-gradient(#d7454e 0%, #d9323e 25%, #c3222d 60%, #a91620 100%);
 	-fx-font-size:20px;
 	-fx-pref-width: fit-content;
 	-fx-pref-height:50px;
 	-fx-background-radius: 15px 15px;
 	-fx-padding: 5px;
+	-fx-font: bold 20px "Copperplate";
+	-fx-effect: dropshadow( gaussian , rgba(0,0,0,0.7) , 5,0,0,1 );
 }
 Button:hover {
-	-fx-background-color: #cb6068;
+	-fx-background-color:
+			linear-gradient(#F98F96 0%, #FB7C86 25%, #E56C75 60%, #cb6068 100%);
 	-fx-text-fill: white;
 	-fx-border-radius: 15px 15px;
-	-fx-border-color: black;
+	-fx-effect: dropshadow( gaussian , rgba(0,0,0,0.7) , 10,0,0,1 );
 }
-
 #btnAddNewOpponent, #btnAddNewPlayer, #btnDelete {
 	-fx-background-color: #CCCCCC;
 	-fx-text-fill: #FFFFFF;
 }
 #selectPlayer {
 	-fx-background-color: #efefef;
+}
+
+ListView, ChoiceBox {
+	-fx-font-family: 'Copperplate';
+	-fx-background-insets: 0;
+	-fx-padding: 0;
+}
+
+.list-cell:selected, .choice-box .menu-item:focused > .label  {
+	-fx-background-color: #cf1e1e;
+}
+
+.list-cell, .choice-box .menu-item {
+	-fx-background-color: white;
+}
+
+Label {
+	-fx-font-family: 'Copperplate';
+}
+TextField, PasswordField{
+	-fx-background-insets: 0;
+	-fx-padding: 0;
+	-fx-font: 20px "Copperplate";
+	-fx-accent: #cf1e1e;
+}
+#textFieldPassword, #textFieldUsername{
+	-fx-font: bold 20px "Copperplate";
+	-fx-alignment: center;
 }

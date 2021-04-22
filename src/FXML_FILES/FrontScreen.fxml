@@ -9,7 +9,7 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="538.0" prefWidth="1474.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLERS.FrontScreenController">
    <children>
       <Pane layoutX="159.0" layoutY="104.0" prefHeight="200.0" prefWidth="200.0" styleClass="centerPane" />
-      <Button fx:id="btnMules" layoutX="259.0" layoutY="350.0" mnemonicParsing="false" onAction="#openMulesVideo" prefHeight="91.0" prefWidth="319.0" styleClass="loginButton" text="Mules Player Video">
+      <Button fx:id="btnMules" layoutX="245.0" layoutY="375.0" mnemonicParsing="false" onAction="#openMulesVideo" prefHeight="91.0" prefWidth="319.0" styleClass="loginButton" text="Mules Player Video">
          <font>
             <Font size="29.0" />
          </font></Button>
@@ -18,12 +18,12 @@
             <Image url="@../IMAGES/title.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnSubmit" layoutX="578.0" layoutY="350.0" mnemonicParsing="false" onAction="#openSubmitVideo" prefHeight="91.0" prefWidth="319.0" styleClass="loginButton" text="Submit New Video">
+      <Button fx:id="btnSubmit" layoutX="578.0" layoutY="375.0" mnemonicParsing="false" onAction="#openSubmitVideo" prefHeight="91.0" prefWidth="319.0" styleClass="loginButton" text="Submit New Video">
          <font>
             <Font size="29.0" />
          </font>
       </Button>
-      <Button fx:id="btnOpponent" layoutX="897.0" layoutY="350.0" mnemonicParsing="false" onAction="#openOpponentVideo" prefHeight="91.0" prefWidth="319.0" styleClass="loginButton" text="Opponents Video">
+      <Button fx:id="btnOpponent" layoutX="911.0" layoutY="375.0" mnemonicParsing="false" onAction="#openOpponentVideo" prefHeight="91.0" prefWidth="319.0" styleClass="loginButton" text="Opponents Video">
          <font>
             <Font size="29.0" />
          </font>
