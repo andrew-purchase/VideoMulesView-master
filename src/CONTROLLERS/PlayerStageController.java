@@ -68,7 +68,7 @@ public class PlayerStageController {
         video_link=Models.DbConnection.ReturnVideoLink(video_name);
         if(isValid(video_link)){
             Stage primaryStage = new Stage();
-            primaryStage.setTitle("JavaFX WebView Example");
+            primaryStage.setTitle("MULES VIDEO CONTROL");
             primaryStage.setResizable(false);
 
             WebView webView = new WebView();

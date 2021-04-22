@@ -54,7 +54,7 @@ public class OpponentScreenController {
         video_link=Models.DbConnection.ReturnVideoLink2(video_name);
         if (PlayerStageController.isValid(video_link)){
             Stage primaryStage = new Stage();
-            primaryStage.setTitle("JavaFX WebView Example");
+            primaryStage.setTitle("MULES VIDEO CONTROL");
             primaryStage.setResizable(false);
 
             WebView webView = new WebView();
