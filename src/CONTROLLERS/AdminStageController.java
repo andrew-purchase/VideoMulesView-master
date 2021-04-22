@@ -81,10 +81,18 @@ public class AdminStageController {
         player_name = viewPlayer.getSelectionModel().getSelectedItem();
         video_name = txtVideoName.getText().trim().toString();
         video_link= txtVideoLink.getText().trim().toString();
-        Models.DbConnection.addNewPlayer(player_name,video_name,video_link,type);
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setHeaderText("a new video has been added to player " + player_name);
-        alert.showAndWait();
+        if (PlayerStageController.isValid(video_link)){
+            Models.DbConnection.addNewPlayer(player_name,video_name,video_link,type);
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setHeaderText("a new video has been added to player " + player_name);
+            alert.showAndWait();
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("INCORRECT Video Link for Player : " + player_name + ", please provide a valid video link");
+            alert.showAndWait();
+        }
+
     }
 
     public void deletePlayer() throws Exception{

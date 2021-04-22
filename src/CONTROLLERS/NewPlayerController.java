@@ -33,11 +33,19 @@ public class NewPlayerController {
         video_link = txtVideoLink.getText().toString();
         video_name=txtVideoName.getText().toString();
         type=boxChoicetype.getSelectionModel().getSelectedItem();
-        Models.DbConnection.addNewPlayer(player_name,video_name,video_link,type);
-        AdminStageController.closeNewPlayerStage();
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setHeaderText("The Player " + player_name + " has been added");
-        alert.showAndWait();
+        if (PlayerStageController.isValid(video_link)) {
+            Models.DbConnection.addNewPlayer(player_name,video_name,video_link,type);
+            AdminStageController.closeNewPlayerStage();
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setHeaderText("The Player " + player_name + " has been added");
+            alert.showAndWait();
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("INCORRECT Video Link for Player : " + player_name + ", please provide a valid video link");
+            alert.showAndWait();
+        }
+
     }
 
 }

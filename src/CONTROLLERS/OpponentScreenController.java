@@ -2,6 +2,7 @@ package CONTROLLERS;
 
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.VBox;
@@ -48,51 +49,31 @@ public class OpponentScreenController {
         mainController.openFrontScreen();
     }
 
-  /**  public void displayVideo() throws Exception{
-        video_name = videoView.getSelectionModel().getSelectedItem();
-        video_link=Models.DbConnection.ReturnVideoLink2(video_name);
-        String path = new File("C:\\Users\\Alex\\IdeaProjects\\UCMVideoProject\\src\\" + video_link).getAbsolutePath();
-        media = new Media(new File(path).toURI().toString());
-        mediaPlayer = new MediaPlayer(media);
-        mediaView.setMediaPlayer(mediaPlayer);
-        mediaPlayer.setAutoPlay(true);
-    }
-
-    public void pauseMedia(){
-        if (Playing){
-            mediaPlayer.pause();
-            btnPause.setText("Play");
-            Playing=false;
-        }
-        else {
-            mediaPlayer.play();
-            btnPause.setText("Pause");
-            Playing=true;
-        }
-
-
-    }
-    public void resetMedia(){
-        mediaPlayer.seek(Duration.seconds(0.0));
-
-    } **/
-
     public void openVideo() throws Exception{
         video_name = videoView.getSelectionModel().getSelectedItem();
         video_link=Models.DbConnection.ReturnVideoLink2(video_name);
-        Stage primaryStage = new Stage();
-        primaryStage.setTitle("JavaFX WebView Example");
-        primaryStage.setResizable(false);
+        if (PlayerStageController.isValid(video_link)){
+            Stage primaryStage = new Stage();
+            primaryStage.setTitle("JavaFX WebView Example");
+            primaryStage.setResizable(false);
 
-        WebView webView = new WebView();
+            WebView webView = new WebView();
 
-        webView.getEngine().load(video_link);
+            webView.getEngine().load(video_link);
 
-        VBox vBox = new VBox(webView);
-        Scene scene = new Scene(vBox, 960, 600);
+            VBox vBox = new VBox(webView);
+            Scene scene = new Scene(vBox, 960, 600);
 
-        primaryStage.setScene(scene);
-        primaryStage.show();
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("INCORRECT Video Link for Player : " + player_name);
+            alert.showAndWait();
+        }
+
 
     }
 
