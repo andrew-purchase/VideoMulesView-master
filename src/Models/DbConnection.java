@@ -16,7 +16,6 @@ import java.util.ArrayList;
             Connection myConn = DriverManager.getConnection
                     ("jdbc:mysql://BigOunce.duckdns.org:50931/UCM_Baseball_Video_Control?serverTimezone=UTC","madera" ,"java-project");
             System.out.println("Database connected");
-
             stmt = myConn.createStatement();
         }
 
@@ -101,17 +100,14 @@ import java.util.ArrayList;
         public static void addNewPlayer(String name, String vName, String vLink, String type) throws SQLException {
             String newPlayerQuery=PlayerQueries.InsertNewPlayer(name, vName, vLink, type);
             stmt.executeUpdate(newPlayerQuery);
-            System.out.println("UPDATE COMPLETED");
         }
         public static void addNewOpponentVideo(String player_name, String player_link, String video_name, String player_type, String team_name) throws SQLException {
             String newOpponentQuery=PlayerQueries.InsertNewOpponentVideo(player_name, player_link, video_name, player_type, team_name);
             stmt.executeUpdate(newOpponentQuery);
-            System.out.println("UPDATE COMPLETED");
         }
         public static void DeletePlayer (String player_name, String video_name) throws SQLException {
             String deletePlayer = PlayerQueries.DeletePlayer(player_name, video_name);
             stmt.executeUpdate(deletePlayer);
-            System.out.println("DELETE COMPLETED");
         }
     public static void main(String[] args) throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
         InitializeDB();
